@@ -1,0 +1,40 @@
+GET http://127.0.0.1:3000/get-all
+Content-Length: application/json
+Database: alvearium
+Collection: flamur
+
+###
+
+GET http://127.0.0.1:3000/get-single/66b6639cf430d8cdfa04e8f2
+Content-Length: application/json
+Database: alvearium
+Collection: flamur
+
+###
+
+POST http://127.0.0.1:3000/create
+Content-Length: application/json
+Database: alvearium
+Collection: flamur
+
+{
+    "Test": 3333
+}
+
+###
+
+PUT http://127.0.0.1:3000/update/66b7080ef430d8cdfa04e8f4
+Content-Length: application/json
+Database: alvearium
+Collection: flamur
+
+{
+    "Test": "AAA"
+}
+
+###
+
+DELETE http://127.0.0.1:3000/delete/66b70734f430d8cdfa04e8f3
+Content-Length: application/json
+Database: alvearium
+Collection: flamur
