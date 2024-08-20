@@ -7,10 +7,11 @@
         protected $collection;
         protected $actionStatus;
         function __construct(Type $collection = null) {
+            $connection = new Database();
             $database_name = isset($_SERVER["HTTP_DATABASE"]) ? $_SERVER["HTTP_DATABASE"] : 0;
             $collection_name = isset($_SERVER["HTTP_COLLECTION"]) ? $_SERVER["HTTP_COLLECTION"] : 0;
             $this->actionStatus = ($database_name && $collection_name) ? 1 : 0;
-            $this->collection = (new MongoDB\Client)->$database_name->$collection_name;
+            $this->collection = $connection->connect_db()->$database_name->$collection_name;
         }
 
         public function delete($uuid) {
